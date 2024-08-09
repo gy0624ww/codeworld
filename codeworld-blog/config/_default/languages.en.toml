@@ -1,0 +1,20 @@
+languageCode = "en"
+languageName = "English"
+weight = 1
+title = "关越的Blog"
+
+[params]
+displayName = "EN"
+isoCode = "en"
+rtl = false
+dateFormat = "2 January 2006"
+description = "记录知识,分享知识"
+logo = "avatar.jpg"
+secondaryLogo = "avatar.jpg"
+
+[author]
+name = "渺小de尘埃"
+image = "avatar.jpg"
+bio = "后端开发工程师"
+headline = "爱乐高，爱编程，爱摄影"
+links = [ { email = "mailto:gy0624@foxmail.com" }, { github = "https://github.com/gy0624ww" }, { instagram = "https://www.instagram.com/gy0624ww?igsh=N2RzcTI4NnE0dDNy&utm_source=qr" }, { telegram = "https://t.me/gy0624ww" }, { twitter = "https://x.com/tellutop" }, { youtube = "https://www.youtube.com/@gy0624ww" } ]

@@ -1,0 +1,20 @@
+[[main]]
+name = "Parent"
+
+[[main]]
+name = "Blog"
+pageRef = "posts"
+identifier = "kcNJ9Erpbc"
+Parent = "Parent"
+weight = 2
+
+[[main]]
+name = "menu2"
+pageRef = "about"
+Parent = "Parent"
+identifier = "FmaUP9UUi2"
+weight = 1
+
+
+[[footer]]
+none = "none"

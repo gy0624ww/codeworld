@@ -1,0 +1,109 @@
+colorScheme = "blowfish"
+defaultAppearance = "light"
+autoSwitchAppearance = false
+enableSearch = true
+enableCodeCopy = true
+disableImageOptimization = false
+disableTextInHeader = false
+defaultBackgroundImage = "background.svg"
+defaultFeaturedImage = "featured.png"
+highlightCurrentMenuArea = true
+smartTOC = true
+smartTOCHideUnfocusedChildren = false
+
+[header]
+layout = "fixed-fill-blur"
+
+[footer]
+showMenu = true
+showCopyright = true
+showThemeAttribution = false
+showAppearanceSwitcher = true
+showScrollToTop = true
+
+[homepage]
+layout = "background"
+showRecent = true
+showRecentItems = 5
+showMoreLink = true
+showMoreLinkDest = "/posts"
+cardView = true
+cardViewScreenWidth = false
+layoutBackgroundBlur = true
+homepageImage = "background.svg"
+
+[article]
+showDate = true
+showViews = true
+showLikes = true
+showDateOnlyInArticle = false
+showDateUpdated = false
+showAuthor = true
+showHero = true
+layoutBackgroundBlur = true
+layoutBackgroundHeaderSpace = true
+showBreadcrumbs = false
+showDraftLabel = true
+showEdit = false
+editAppendPath = true
+seriesOpened = false
+showHeadingAnchors = true
+showPagination = true
+invertPagination = false
+showReadingTime = true
+showTableOfContents = true
+showTaxonomies = false
+showAuthorsBadges = false
+showWordCount = true
+showZenMode = true
+heroStyle = "thumbAndBackground"
+showRelatedContent = false
+showComments = true
+
+[list]
+showHero = false
+layoutBackgroundBlur = true
+layoutBackgroundHeaderSpace = true
+showBreadcrumbs = false
+showSummary = true
+showViews = false
+showLikes = false
+showTableOfContents = false
+showCards = false
+orderByWeight = false
+groupByYear = true
+cardView = false
+cardViewScreenWidth = false
+constrainItemsWidth = false
+
+[sitemap]
+excludedKinds = [ "taxonomy", "term" ]
+
+[taxonomy]
+showTermCount = true
+showHero = false
+showBreadcrumbs = false
+showViews = false
+showLikes = false
+showTableOfContents = false
+cardView = false
+
+[term]
+showHero = false
+showBreadcrumbs = false
+showViews = false
+showLikes = false
+showTableOfContents = true
+groupByYear = false
+cardView = false
+cardViewScreenWidth = false
+
+[firebase]
+
+[fathomAnalytics]
+
+[umamiAnalytics]
+
+[buymeacoffee]
+
+[verification]
