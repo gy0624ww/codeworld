@@ -10,7 +10,8 @@ defaultFeaturedImage = "featured.png"
 highlightCurrentMenuArea = true
 smartTOC = true
 smartTOCHideUnfocusedChildren = false
-
+showViews = true
+showLikes = true
 [header]
 layout = "fixed-fill-blur"
 
@@ -99,6 +100,13 @@ cardView = false
 cardViewScreenWidth = false
 
 [firebase]
+apiKey = "AIzaSyDf-QmZNcooSJL1a9PBbrX-KxWmJNBILjw"
+authDomain = "blog-f0d05.firebaseapp.com"
+projectId = "blog-f0d05"
+storageBucket = "blog-f0d05.appspot.com"
+messagingSenderId = "69996245852"
+appId = "1:69996245852:web:7afa93ad309ca42c310799"
+measurementId = "G-MNFV3J6PGD"
 
 [fathomAnalytics]
 
