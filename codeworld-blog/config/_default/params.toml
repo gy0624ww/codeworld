@@ -12,6 +12,7 @@ smartTOC = true
 smartTOCHideUnfocusedChildren = false
 showViews = true
 showLikes = true
+
 [header]
 layout = "fixed-fill-blur"
 
@@ -43,7 +44,7 @@ showAuthor = true
 showHero = true
 layoutBackgroundBlur = true
 layoutBackgroundHeaderSpace = true
-showBreadcrumbs = false
+showBreadcrumbs = true
 showDraftLabel = true
 showEdit = false
 editAppendPath = true
@@ -53,7 +54,7 @@ showPagination = true
 invertPagination = false
 showReadingTime = true
 showTableOfContents = true
-showTaxonomies = false
+showTaxonomies = true
 showAuthorsBadges = false
 showWordCount = true
 showZenMode = true
@@ -66,7 +67,7 @@ showHero = false
 layoutBackgroundBlur = true
 layoutBackgroundHeaderSpace = true
 showBreadcrumbs = false
-showSummary = true
+showSummary = false
 showViews = false
 showLikes = false
 showTableOfContents = false
