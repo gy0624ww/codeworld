@@ -320,6 +320,7 @@ fmt.Printf("Achieved %v cycles of work before signalled to stop.\n", workCounter
 
 结果：
 
+
 ```
 Achieved 5 cycles of work before signalled to stop.
 ```
