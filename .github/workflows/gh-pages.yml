@@ -26,8 +26,7 @@ jobs:
           extended: true
 
       - name: Build
-        run: |
-        echo hugo --minify
+        run: echo ${{ github.ref }}; pwd
 
       - name: Deploy
         uses: peaceiris/actions-gh-pages@v4
