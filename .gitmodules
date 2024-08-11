@@ -2,3 +2,7 @@
 	path = codeworld-blog/themes/blowfish
 	url = git@github.com:nunocoracao/blowfish.git
 	branch = main
+[submodule "codeworld-blog/public"]
+	path = codeworld-blog/public
+	url = git@github.com:gy0624ww/gy0624ww.github.io.git
+	branch = gh-pages
