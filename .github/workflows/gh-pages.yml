@@ -33,6 +33,6 @@ jobs:
         uses: peaceiris/actions-gh-pages@v4
         if: ${{ github.ref == 'refs/heads/main' }}
         with:
-          github_token: ${{ secrets.TOKEN }}
+          deploy_key: ${{ secrets.TOKEN }}
           publish_branch: gh-pages
           publish_dir: ./
