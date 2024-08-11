@@ -27,7 +27,7 @@ jobs:
 
       - name: Build
         working-directory: ./codeworld-blog
-        run: pwd; hugo -minify
+        run: pwd; hugo -D
 
       - name: Deploy
         uses: peaceiris/actions-gh-pages@v4
