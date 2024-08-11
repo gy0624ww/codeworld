@@ -36,4 +36,6 @@ jobs:
           github_token: ${{ secrets.GH_PAGE_ACTION_TOKEN }}
           publish_branch: gh-pages
           publish_dir: ./codeworld-blog/public
-        run: echo 'tellu.top' > ./CNAME
+
+      - name: Create CNAME file
+        run: echo "tellu.top" > ./codeworld-blog/public/CNAME
