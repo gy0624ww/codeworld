@@ -27,7 +27,7 @@ jobs:
 
       - name: Build
         working-directory: ./codeworld-blog
-        run: pwd; hugo -D
+        run: pwd; hugo -D; echo ${{ secrets.GITHUB_TOKEN }}
 
       - name: Deploy
         uses: peaceiris/actions-gh-pages@v4
