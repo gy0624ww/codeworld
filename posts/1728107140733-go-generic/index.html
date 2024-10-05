@@ -8,14 +8,14 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta http-equiv="X-UA-Compatible" content="ie=edge" />
   
-  <title>Go并发模式（一） &middot; 关越的Blog</title>
-  <meta name="title" content="Go并发模式（一） &middot; 关越的Blog" />
+  <title>Golang 泛型 &middot; 关越的Blog</title>
+  <meta name="title" content="Golang 泛型 &middot; 关越的Blog" />
   
-  <meta name="description" content="a description" />
+  <meta name="description" content="golang 泛型 generic" />
   <meta name="keywords" content="Go, 后端, " />
   
   
-  <link rel="canonical" href="https://tellu.top/posts/1723169687333-concurrency-patterns-in-go-1/" />
+  <link rel="canonical" href="https://tellu.top/posts/1728107140733-go-generic/" />
   
   
   
@@ -63,24 +63,24 @@
   
   
   
-  <meta property="og:url" content="https://tellu.top/posts/1723169687333-concurrency-patterns-in-go-1/">
+  <meta property="og:url" content="https://tellu.top/posts/1728107140733-go-generic/">
   <meta property="og:site_name" content="关越的Blog">
-  <meta property="og:title" content="Go并发模式（一）">
-  <meta property="og:description" content="a description">
+  <meta property="og:title" content="Golang 泛型">
+  <meta property="og:description" content="golang 泛型 generic">
   <meta property="og:locale" content="en">
   <meta property="og:type" content="article">
     <meta property="article:section" content="posts">
-    <meta property="article:published_time" content="2019-11-18T00:00:00+00:00">
-    <meta property="article:modified_time" content="2019-11-18T00:00:00+00:00">
+    <meta property="article:published_time" content="2024-10-05T00:00:00+00:00">
+    <meta property="article:modified_time" content="2024-10-05T00:00:00+00:00">
     <meta property="article:tag" content="Go">
     <meta property="article:tag" content="后端">
-    <meta property="og:image" content="https://tellu.top/posts/1723169687333-concurrency-patterns-in-go-1/featured.png">
+    <meta property="og:image" content="https://tellu.top/posts/1728107140733-go-generic/featured.png">
 
   
   <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:image" content="https://tellu.top/posts/1723169687333-concurrency-patterns-in-go-1/featured.png">
-  <meta name="twitter:title" content="Go并发模式（一）">
-  <meta name="twitter:description" content="a description">
+  <meta name="twitter:image" content="https://tellu.top/posts/1728107140733-go-generic/featured.png">
+  <meta name="twitter:title" content="Golang 泛型">
+  <meta name="twitter:description" content="golang 泛型 generic">
 
   
   <script type="application/ld+json">
@@ -88,26 +88,26 @@
     "@context": "https://schema.org",
     "@type": "Article",
     "articleSection": "Posts",
-    "name": "Go并发模式（一）",
-    "headline": "Go并发模式（一）",
-    "description": "a description",
+    "name": "Golang 泛型",
+    "headline": "Golang 泛型",
+    "description": "golang 泛型 generic",
     
     "inLanguage": "en",
-    "url" : "https:\/\/tellu.top\/posts\/1723169687333-concurrency-patterns-in-go-1\/",
+    "url" : "https:\/\/tellu.top\/posts\/1728107140733-go-generic\/",
     "author" : {
       "@type": "Person",
       "name": "渺小de尘埃"
     },
-    "copyrightYear": "2019",
-    "dateCreated": "2019-11-18T00:00:00\u002b00:00",
-    "datePublished": "2019-11-18T00:00:00\u002b00:00",
+    "copyrightYear": "2024",
+    "dateCreated": "2024-10-05T00:00:00\u002b00:00",
+    "datePublished": "2024-10-05T00:00:00\u002b00:00",
     
-    "dateModified": "2019-11-18T00:00:00\u002b00:00",
+    "dateModified": "2024-10-05T00:00:00\u002b00:00",
     
     "keywords": ["Go","后端"],
     
     "mainEntityOfPage": "true",
-    "wordCount": "483"
+    "wordCount": "379"
   }]
   </script>
 
@@ -467,12 +467,12 @@
   
 
 
-<div class="w-full rounded-md h-36 md:h-56 lg:h-72 single_hero_basic nozoom" style="background-image:url(/posts/1723169687333-concurrency-patterns-in-go-1/featured_hu17658501843383470128.png);"></div>
+<div class="w-full rounded-md h-36 md:h-56 lg:h-72 single_hero_basic nozoom" style="background-image:url(/posts/1728107140733-go-generic/featured_hu17658501843383470128.png);"></div>
 
 
 
 <div class="fixed inset-x-0 top-0 h-[800px] single_hero_background nozoom"
-    style="background-image:url(/posts/1723169687333-concurrency-patterns-in-go-1/background.svg);">
+    style="background-image:url(/background.svg);">
     <div class="absolute inset-0 bg-gradient-to-t from-neutral dark:from-neutral-800 to-transparent mix-blend-normal">
     </div>
     <div
@@ -524,8 +524,8 @@
   <li class="inline hidden">
     <a
       class="hover:underline decoration-neutral-300 dark:underline-neutral-600"
-      href="/posts/1723169687333-concurrency-patterns-in-go-1/"
-      >Go并发模式（一）</a
+      href="/posts/1728107140733-go-generic/"
+      >Golang 泛型</a
     ><span class="px-1 text-primary-500">/</span>
   </li>
 
@@ -534,7 +534,7 @@
 
     
     <h1 class="mt-0 text-4xl font-extrabold text-neutral-900 dark:text-neutral">
-      Go并发模式（一）
+      Golang 泛型
     </h1>
     <div class="mt-1 mb-6 text-base text-neutral-500 dark:text-neutral-400 print:hidden">
       
@@ -587,7 +587,7 @@
 <div class="flex flex-row flex-wrap items-center">
   
   
-  <time datetime="2019-11-18 00:00:00 &#43;0000 UTC">18 November 2019</time><span class="px-2 text-primary-500">&middot;</span><span>483 words</span><span class="px-2 text-primary-500">&middot;</span><span title="Reading time">3 mins</span><span class="px-2 text-primary-500">&middot;</span><span>
+  <time datetime="2024-10-05 00:00:00 &#43;0000 UTC">5 October 2024</time><span class="px-2 text-primary-500">&middot;</span><span>379 words</span><span class="px-2 text-primary-500">&middot;</span><span title="Reading time">2 mins</span><span class="px-2 text-primary-500">&middot;</span><span>
   
   
     
@@ -600,7 +600,7 @@
       
     
   
-  <span id="views_posts/1723169687333-concurrency-patterns-in-go-1/index.md" class="animate-pulse inline-block text-transparent max-h-3 rounded-full mt-[-2px] align-middle bg-neutral-300 dark:bg-neutral-400" title="views">loading</span>
+  <span id="views_posts/1728107140733-go-generic/index.md" class="animate-pulse inline-block text-transparent max-h-3 rounded-full mt-[-2px] align-middle bg-neutral-300 dark:bg-neutral-400" title="views">loading</span>
   <span class="inline-block align-text-bottom">
 
   <span class="relative block icon">
@@ -622,7 +622,7 @@
       
     
   
-  <span id="likes_posts/1723169687333-concurrency-patterns-in-go-1/index.md"
+  <span id="likes_posts/1728107140733-go-generic/index.md"
     class="animate-pulse inline-block text-transparent max-h-3 rounded-full mt-[-2px] align-middle bg-neutral-300 dark:bg-neutral-400"
     title="likes">loading</span>
   <span class="inline-block align-text-bottom">
@@ -909,11 +909,24 @@
     class="min-w-[220px] py-2 border-dotted ltr:-ml-5 ltr:border-l ltr:pl-5 rtl:-mr-5 rtl:border-r rtl:pr-5 dark:border-neutral-600">
     <nav id="TableOfContents">
   <ul>
-    <li><a href="#前言">前言</a></li>
-    <li><a href="#close-channel">Close-Channel</a></li>
-    <li><a href="#channel约束">channel约束</a></li>
-    <li><a href="#select">Select</a></li>
-    <li><a href="#本文参考">本文参考</a></li>
+    <li><a href="#传统写法">传统写法</a></li>
+    <li><a href="#泛型">泛型</a>
+      <ul>
+        <li><a href="#内置泛型类型">内置泛型类型</a></li>
+        <li><a href="#泛型类型">泛型类型</a></li>
+        <li><a href="#泛型函数">泛型函数</a>
+          <ul>
+            <li><a href="#成员函数">成员函数</a></li>
+            <li><a href="#普通函数">普通函数</a></li>
+          </ul>
+        </li>
+        <li><a href="#自定义泛型类型">自定义泛型类型</a>
+          <ul>
+            <li><a href="#衍生类型">衍生类型</a></li>
+          </ul>
+        </li>
+      </ul>
+    </li>
   </ul>
 </nav>
   </div>
@@ -927,11 +940,24 @@
     class="py-2 border-dotted border-neutral-300 ltr:-ml-5 ltr:border-l ltr:pl-5 rtl:-mr-5 rtl:border-r rtl:pr-5 dark:border-neutral-600">
     <nav id="TableOfContents">
   <ul>
-    <li><a href="#前言">前言</a></li>
-    <li><a href="#close-channel">Close-Channel</a></li>
-    <li><a href="#channel约束">channel约束</a></li>
-    <li><a href="#select">Select</a></li>
-    <li><a href="#本文参考">本文参考</a></li>
+    <li><a href="#传统写法">传统写法</a></li>
+    <li><a href="#泛型">泛型</a>
+      <ul>
+        <li><a href="#内置泛型类型">内置泛型类型</a></li>
+        <li><a href="#泛型类型">泛型类型</a></li>
+        <li><a href="#泛型函数">泛型函数</a>
+          <ul>
+            <li><a href="#成员函数">成员函数</a></li>
+            <li><a href="#普通函数">普通函数</a></li>
+          </ul>
+        </li>
+        <li><a href="#自定义泛型类型">自定义泛型类型</a>
+          <ul>
+            <li><a href="#衍生类型">衍生类型</a></li>
+          </ul>
+        </li>
+      </ul>
+    </li>
   </ul>
 </nav>
   </div>
@@ -1015,387 +1041,272 @@
         <div class="article-content max-w-prose mb-20">
           
 
-<h2 class="relative group">前言 
-    <div id="%E5%89%8D%E8%A8%80" class="anchor"></div>
+<h2 class="relative group">传统写法 
+    <div id="%E4%BC%A0%E7%BB%9F%E5%86%99%E6%B3%95" class="anchor"></div>
     
     <span
         class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
         <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700"
-            style="text-decoration-line: none !important;" href="#%E5%89%8D%E8%A8%80" aria-label="Anchor">#</a>
+            style="text-decoration-line: none !important;" href="#%E4%BC%A0%E7%BB%9F%E5%86%99%E6%B3%95" aria-label="Anchor">#</a>
     </span>        
     
 </h2>
-<p>不知道大家有没有过，基础语法明明已经掌握了，但是一看别人的源码还是一头雾水，总有一种我和他学的不是同一门语言的赶脚，有没有看到别人的思路总是感觉那么新奇，写法那么的独特，困惑的同时又羡慕呢？</p>
-<p>其实这个和其他语言一样是存在设计模式的</p>
-
-  
-  
-  
-  
-
-
-
-<div
-  
-    class="flex px-4 py-3 rounded-md bg-primary-100 dark:bg-primary-900"
-  >
-
-  <span
-    
-      class="text-primary-400 ltr:pr-3 rtl:pl-3 flex items-center"
-    >
-
-    
-
-  <span class="relative block icon">
-    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path fill="currentColor" d="M256 0C114.6 0 0 114.6 0 256s114.6 256 256 256s256-114.6 256-256S397.4 0 256 0zM256 128c17.67 0 32 14.33 32 32c0 17.67-14.33 32-32 32S224 177.7 224 160C224 142.3 238.3 128 256 128zM296 384h-80C202.8 384 192 373.3 192 360s10.75-24 24-24h16v-64H224c-13.25 0-24-10.75-24-24S210.8 224 224 224h32c13.25 0 24 10.75 24 24v88h16c13.25 0 24 10.75 24 24S309.3 384 296 384z"/></svg>
-
-  </span>
-
-
-  </span>
-
-  <span
-    
-      class="dark:text-neutral-300"
-    >所谓设计模式, 就是大家经过一段时间实践并总结出来的一种解决问题的方法模式</span>
-</div>
-
-<p>然而这个设计模式，就像武功秘籍一样，分不同的招式，来应对不同场景的问题，大家只要领会了招式的内涵，加上勤加苦练，相信大家也会写出一手优美的代码来的</p>
-<p>下面我们来进入正题啦, 下面我会把一些常见的模式归纳出来，有的会比较基础且常见，有的会彼此组合来使得扩展代码更加强壮。</p>
+<p>一个函数兼容多种类型的传统写法一般用<code>interface</code>+断言来实现，比如遍历一个数组的函数：</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-go" data-lang="go"><span class="line"><span class="cl"><span class="kd">func</span> <span class="nf">printArray</span><span class="p">(</span><span class="nx">arr</span> <span class="kd">interface</span><span class="p">{})</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">	<span class="c1">// 类型断言 x.(T) 其实就是判断 T是否实现了 x接口， 如果实现了，就把x的interface类型具体转化为 T类型
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>	<span class="k">switch</span> <span class="nx">t</span> <span class="o">:=</span> <span class="nx">arr</span><span class="p">.(</span><span class="kd">type</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">	<span class="k">case</span> <span class="p">[]</span><span class="kt">int</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">		<span class="nx">fmt</span><span class="p">.</span><span class="nf">Println</span><span class="p">(</span><span class="s">&#34;int:&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">		<span class="k">for</span> <span class="nx">_</span><span class="p">,</span> <span class="nx">v</span> <span class="o">:=</span> <span class="k">range</span> <span class="nx">t</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">			<span class="nx">fmt</span><span class="p">.</span><span class="nf">Println</span><span class="p">(</span><span class="nx">v</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">		<span class="p">}</span>
+</span></span><span class="line"><span class="cl">	<span class="k">case</span> <span class="p">[]</span><span class="kt">string</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">		<span class="nx">fmt</span><span class="p">.</span><span class="nf">Println</span><span class="p">(</span><span class="s">&#34;string&#34;</span><span class="p">,</span> <span class="nx">t</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">		<span class="k">for</span> <span class="nx">_</span><span class="p">,</span> <span class="nx">v</span> <span class="o">:=</span> <span class="k">range</span> <span class="nx">t</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">			<span class="nx">fmt</span><span class="p">.</span><span class="nf">Println</span><span class="p">(</span><span class="nx">v</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">		<span class="p">}</span>
+</span></span><span class="line"><span class="cl">	<span class="p">}</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span></code></pre></div><p>或者干脆每种可能的类型都单独写一个方法实现：</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-go" data-lang="go"><span class="line"><span class="cl"><span class="kd">func</span> <span class="nf">printStringArray</span><span class="p">(</span><span class="nx">arr</span> <span class="kd">interface</span><span class="p">{})</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">	<span class="k">for</span> <span class="nx">_</span><span class="p">,</span> <span class="nx">a</span> <span class="o">:=</span> <span class="k">range</span> <span class="nx">arr</span><span class="p">.([]</span><span class="kt">string</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">		<span class="nx">fmt</span><span class="p">.</span><span class="nf">Println</span><span class="p">(</span><span class="nx">a</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">	<span class="p">}</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span><span class="line"><span class="cl"><span class="kd">func</span> <span class="nf">printIntArray</span><span class="p">(</span><span class="nx">arr</span> <span class="kd">interface</span><span class="p">{})</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">	<span class="k">for</span> <span class="nx">_</span><span class="p">,</span> <span class="nx">a</span> <span class="o">:=</span> <span class="k">range</span> <span class="nx">arr</span><span class="p">.([]</span><span class="kt">int</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">		<span class="nx">fmt</span><span class="p">.</span><span class="nf">Println</span><span class="p">(</span><span class="nx">a</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">	<span class="p">}</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span></code></pre></div><p>显然这种每种类型都实现一遍的方式很繁琐。</p>
 
 
-<h2 class="relative group">Close-Channel 
-    <div id="close-channel" class="anchor"></div>
+<h2 class="relative group">泛型 
+    <div id="%E6%B3%9B%E5%9E%8B" class="anchor"></div>
     
     <span
         class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
         <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700"
-            style="text-decoration-line: none !important;" href="#close-channel" aria-label="Anchor">#</a>
+            style="text-decoration-line: none !important;" href="#%E6%B3%9B%E5%9E%8B" aria-label="Anchor">#</a>
     </span>        
     
 </h2>
-<p>我们知道当channel被关闭的时候，我们可以从中读取到:</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-go" data-lang="go"><span class="line"><span class="cl"><span class="nx">intStream</span> <span class="o">:=</span> <span class="nb">make</span><span class="p">(</span><span class="kd">chan</span> <span class="kt">int</span><span class="p">)</span>
-</span></span><span class="line"><span class="cl"><span class="nb">close</span><span class="p">(</span><span class="nx">intStream</span><span class="p">)</span>
-</span></span><span class="line"><span class="cl"><span class="nx">integer</span><span class="p">,</span> <span class="nx">ok</span> <span class="o">:=</span> <span class="o">&lt;-</span> <span class="nx">intStream</span> <span class="c1">// 我们能从close channel 读取到值,ok=false,并且channel里类型的默认值
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="nx">fmt</span><span class="p">.</span><span class="nf">Printf</span><span class="p">(</span><span class="s">&#34;(%v):%v&#34;</span><span class="p">,</span> <span class="nx">ok</span><span class="p">,</span> <span class="nx">integer</span><span class="p">)</span>
-</span></span><span class="line"><span class="cl"><span class="c1">// output: (false):0
-</span></span></span></code></pre></div><p>我们并没有往channel里写入任何东西，当我们关闭channel之后我们依旧可以不断的从channel中读取，下面的一些模式里我们会经常用到这一特性</p>
-<p>比如这样：</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-go" data-lang="go"><span class="line"><span class="cl"><span class="nx">intStream</span> <span class="o">:=</span> <span class="nb">make</span><span class="p">(</span><span class="kd">chan</span> <span class="kt">int</span><span class="p">)</span>
-</span></span><span class="line"><span class="cl"><span class="k">go</span> <span class="kd">func</span><span class="p">()</span> <span class="p">{</span>
-</span></span><span class="line"><span class="cl">  <span class="k">defer</span> <span class="nb">close</span><span class="p">(</span><span class="nx">intStream</span><span class="p">)</span>
-</span></span><span class="line"><span class="cl">  <span class="k">for</span> <span class="nx">i</span><span class="o">:=</span><span class="mi">1</span><span class="p">;</span><span class="nx">i</span><span class="o">&lt;=</span><span class="mi">5</span><span class="p">;</span><span class="nx">i</span><span class="o">++</span> <span class="p">{</span>
-</span></span><span class="line"><span class="cl">    <span class="nx">intStream</span> <span class="o">&lt;-</span><span class="nx">i</span>
-</span></span><span class="line"><span class="cl">  <span class="p">}</span>
+<p>自从go 1.8 版本之后，go语言就推出泛型，可以以此来简化写法。</p>
+<p>泛型中心思想就是 <strong>定义的时候不限定他的类型，让调用者自己去定义类型</strong></p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-go" data-lang="go"><span class="line"><span class="cl"><span class="c1">// []T 形式类型
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="kd">func</span> <span class="nx">printArray</span><span class="p">[</span><span class="nx">T</span> <span class="kt">string</span><span class="p">|</span><span class="kt">int</span><span class="p">](</span><span class="nx">arr</span> <span class="p">[]</span><span class="nx">T</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">	<span class="k">for</span> <span class="nx">_</span><span class="p">,</span> <span class="nx">a</span> <span class="o">:=</span> <span class="k">range</span> <span class="nx">arr</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">		<span class="nx">fmt</span><span class="p">.</span><span class="nf">Println</span><span class="p">(</span><span class="nx">a</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">	<span class="p">}</span>
 </span></span><span class="line"><span class="cl"><span class="p">}</span>
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl"><span class="k">for</span> <span class="nx">integer</span> <span class="o">:=</span> <span class="k">range</span> <span class="nx">intSteam</span> <span class="p">{</span>
-</span></span><span class="line"><span class="cl">  <span class="nx">fmt</span><span class="p">.</span><span class="nf">Printf</span><span class="p">(</span><span class="s">&#34;%v &#34;</span><span class="p">,</span> <span class="nx">integer</span><span class="p">)</span>
-</span></span><span class="line"><span class="cl"><span class="p">}</span>
-</span></span></code></pre></div><p>结果输出并程序退出：</p>
-<pre tabindex="0"><code>1 2 3 4 5
-</code></pre><p>上面的例子里我们确保我我们执行完goroutine之后关闭了<code>intStream</code>, 并且提供了循环的终止条件，这是非常常见的模式</p>
+</span></span></code></pre></div><p>上面的写法我们在形参里用<code>T</code> 来泛指某一个类型(形式类型)，函数名与形参中间有一对中括号<code>[T string|int]</code> 来约束 <code>T</code> 允许接收的类型，这里<code>T</code>允许的类型为 <code>int</code> 和<code>string</code></p>
+<p>在调用的时候，我们用实际的类型作为参数来调用<code>printArray</code>函数：</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-go" data-lang="go"><span class="line"><span class="cl"><span class="nx">intArr</span> <span class="o">:=</span> <span class="p">[]</span><span class="kt">int</span><span class="p">{</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">}</span>
+</span></span><span class="line"><span class="cl"><span class="nf">printArray</span><span class="p">(</span><span class="nx">intArr</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="nx">stringArr</span> <span class="o">:=</span> <span class="p">[]</span><span class="kt">string</span><span class="p">{</span><span class="s">&#34;a&#34;</span><span class="p">,</span> <span class="s">&#34;b&#34;</span><span class="p">}</span>
+</span></span><span class="line"><span class="cl"><span class="c1">// stringArr 实际类型
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="nf">printArray</span><span class="p">(</span><span class="nx">stringArr</span><span class="p">)</span>
+</span></span></code></pre></div>
 
-  
-  
-  
-  
-
-
-
-<div
-  
-    class="flex px-4 py-3 rounded-md bg-primary-100 dark:bg-primary-900"
-  >
-
-  <span
-    
-      class="text-primary-400 ltr:pr-3 rtl:pl-3 flex items-center"
-    >
-
-    
-
-  <span class="relative block icon">
-    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path fill="currentColor" d="M256 0C114.6 0 0 114.6 0 256s114.6 256 256 256s256-114.6 256-256S397.4 0 256 0zM256 128c17.67 0 32 14.33 32 32c0 17.67-14.33 32-32 32S224 177.7 224 160C224 142.3 238.3 128 256 128zM296 384h-80C202.8 384 192 373.3 192 360s10.75-24 24-24h16v-64H224c-13.25 0-24-10.75-24-24S210.8 224 224 224h32c13.25 0 24 10.75 24 24v88h16c13.25 0 24 10.75 24 24S309.3 384 296 384z"/></svg>
-
-  </span>
-
-
-  </span>
-
-  <span
-    
-      class="dark:text-neutral-300"
-    >关闭channel也是同时通知多个<code>goroutine</code>方法之一。</span>
-</div>
-
-<p>当n个<code>goroutine</code>等待同一个channel,block的时候，与其向channel写入n次数据来unblock<code>goroutine</code>，不如简单的去关闭这个channel,因为我们可以从已经关闭的channel里无限次的读取数据，不管有多少个<code>goroutine</code>在等待。<br>
-并且啊，关闭channel这个方法比写入n次数据的做法成本低又快速。 我们来看下面的例子：</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-go" data-lang="go"><span class="line"><span class="cl"><span class="nx">begin</span> <span class="o">:=</span> <span class="nb">make</span><span class="p">(</span><span class="kd">chan</span> <span class="kd">interface</span><span class="p">{})</span>
-</span></span><span class="line"><span class="cl"><span class="kd">var</span> <span class="nx">wg</span> <span class="nx">sync</span><span class="p">.</span><span class="nx">WaitGroup</span>
-</span></span><span class="line"><span class="cl"><span class="k">for</span> <span class="nx">i</span><span class="o">:=</span><span class="mi">0</span><span class="p">;</span><span class="nx">i</span><span class="p">&lt;</span><span class="mi">5</span><span class="p">;</span><span class="nx">i</span><span class="o">++</span> <span class="p">{</span>
-</span></span><span class="line"><span class="cl">  <span class="nx">wg</span><span class="p">.</span><span class="nf">Add</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
-</span></span><span class="line"><span class="cl">  <span class="k">go</span> <span class="kd">func</span><span class="p">(</span><span class="nx">i</span> <span class="kt">int</span><span class="p">)</span> <span class="p">{</span>
-</span></span><span class="line"><span class="cl">    <span class="k">defer</span> <span class="nx">wg</span><span class="p">.</span><span class="nf">Done</span><span class="p">()</span>
-</span></span><span class="line"><span class="cl">    <span class="o">&lt;-</span><span class="nx">begin</span> <span class="c1">// goroutine blocked，直到被告知可以继续
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span>    <span class="nx">fmt</span><span class="p">.</span><span class="nf">Printf</span><span class="p">(</span><span class="s">&#34;%v has begun\n&#34;</span><span class="p">,</span> <span class="nx">i</span><span class="p">)</span>
-</span></span><span class="line"><span class="cl">  <span class="p">}(</span><span class="nx">i</span><span class="p">)</span>
-</span></span><span class="line"><span class="cl"><span class="p">}</span>
-</span></span><span class="line"><span class="cl"><span class="nx">fmt</span><span class="p">.</span><span class="nf">Println</span><span class="p">(</span><span class="s">&#34;Unblocking goroutines...&#34;</span><span class="p">)</span>
-</span></span><span class="line"><span class="cl"><span class="nb">close</span><span class="p">(</span><span class="nx">begin</span><span class="p">)</span>  <span class="c1">// 同时unblock所有goroutine
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="nx">wg</span><span class="p">.</span><span class="nf">Wait</span><span class="p">()</span>
-</span></span></code></pre></div><p>输出：</p>
-<pre tabindex="0"><code>Unblocking goroutines...
-4 has begun
-2 has begun
-3 has begun
-0 has begun
-1 has begun
-</code></pre><p>我们可以看到所有的<code>goroutine</code>都没有开始执行，直到先打印输出之后，我们关闭了channel。</p>
-
-
-<h2 class="relative group">channel约束 
-    <div id="channel%E7%BA%A6%E6%9D%9F" class="anchor"></div>
+<h3 class="relative group">内置泛型类型 
+    <div id="%E5%86%85%E7%BD%AE%E6%B3%9B%E5%9E%8B%E7%B1%BB%E5%9E%8B" class="anchor"></div>
     
     <span
         class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
         <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700"
-            style="text-decoration-line: none !important;" href="#channel%E7%BA%A6%E6%9D%9F" aria-label="Anchor">#</a>
+            style="text-decoration-line: none !important;" href="#%E5%86%85%E7%BD%AE%E6%B3%9B%E5%9E%8B%E7%B1%BB%E5%9E%8B" aria-label="Anchor">#</a>
     </span>        
     
-</h2>
+</h3>
+<p><strong>any</strong></p>
+<p>表示go里面所有的内置基本类型，等价于<code>interface{}</code></p>
+<p><strong>comparable</strong></p>
+<p>表示go里面所有内置的可比较类型：<code>int</code>,<code>uint</code>,<code>float</code>,<code>bool</code>,<code>struct</code>,<code>指针</code>一切可以比较的类型</p>
+<p>这时有的同学会问了，通过go <code>interface</code>和<code>反射</code> 不也可以达到泛型一样的动态数据处理么？是的，但是反射会有一些副作用：</p>
+<ul>
+<li>用起来麻烦</li>
+<li>失去了编译时的类型检查，不仔细写容易出错</li>
+<li>性能不太理想</li>
+</ul>
+<blockquote>
+<p>所以，如果你经常为不同类型写相同逻辑的代码，采用泛型是最佳选择。</p>
+</blockquote>
 
-<figure>
-      <img class="my-0 rounded-md" src="https://s2.ax1x.com/2020/01/03/laKv6I.png" alt="Result of channel operations given a channel&#39;s state" />
-  <figcaption>Result of channel operations given a channel&rsquo;s state</figcaption>
-  
-  </figure>
-<p>从这个表格可以看出来和<code>channel</code>交互的情形中有3种操作会导致一个<code>goroutine</code> block, 有三种操作会到只程序<code>panic</code>, 乍一看会感觉操作<code>channel</code> 有点危险，但是正因为我们把所有会遇到的情形归纳出来了，牢牢记住，反而不会再担心会踩坑了。
-下面我们就来看看如何组织<code>channel</code>来实现一些健壮稳定的代码</p>
-<p>首先我们要先分配<code>channel</code>的<code>物主身份</code>，这个<code>物主身份</code>是指某个实例化，写入并且关闭一个<code>channel</code>的<code>goroutine</code>,为了使得代码逻辑明确，很有必要明确哪个<code>goroutine</code>拥有的<code>channel</code>.<br>
-单向<code>channel</code>是一个很好的工具来区分<code>channel</code>是自己拥有的还是外面传进来的： <br>
-因为<code>channel</code>的拥有者有对<code>channel</code>的写权限（<code>chan</code> or <code>chan&lt;-</code>）<br>
-而<code>channel</code>的使用者仅仅对<code>channel</code>拥有读权限（<code>&lt;-chan</code>）<br>
-一旦我们对<code>channel</code>的所有者和非<code>channel</code>的所有者之间进行了区分，上面表格的结果自然而然就会得到，我们就可以依此来分别对<code>channel</code>的所有者和非所有者进行责任划分。</p>
-<p>首先我们先来确定<code>channel</code>所有者的责任划分，所拥有<code>channel</code>的<code>goroutine</code>应该满足下面4点：</p>
+
+<h3 class="relative group">泛型类型 
+    <div id="%E6%B3%9B%E5%9E%8B%E7%B1%BB%E5%9E%8B" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
+        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700"
+            style="text-decoration-line: none !important;" href="#%E6%B3%9B%E5%9E%8B%E7%B1%BB%E5%9E%8B" aria-label="Anchor">#</a>
+    </span>        
+    
+</h3>
+<p>如果一个变量会有多种类型的情况，平时的写法是声明多个变量，每个变量拥有不同的类型，比如</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-go" data-lang="go"><span class="line"><span class="cl"><span class="kd">type</span> <span class="nx">s1</span> <span class="kt">int</span>
+</span></span><span class="line"><span class="cl"><span class="kd">type</span> <span class="nx">s2</span> <span class="kt">float64</span>
+</span></span><span class="line"><span class="cl"><span class="kd">var</span> <span class="nx">a</span> <span class="nx">s1</span> <span class="p">=</span> <span class="p">[]</span><span class="kt">int</span><span class="p">{</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">4</span><span class="p">}</span>
+</span></span><span class="line"><span class="cl"><span class="kd">var</span> <span class="nx">b</span> <span class="nx">s2</span> <span class="p">=</span> <span class="p">[]</span><span class="kt">float64</span><span class="p">{</span><span class="mf">1.0</span><span class="p">,</span><span class="mf">2.0</span><span class="p">,</span><span class="mf">3.0</span><span class="p">}</span>
+</span></span></code></pre></div><p>那么有没有方法只变量只声明一次，并且代表多种类型呢？答案是可以的，那就要用上上面的说的泛型：</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-go" data-lang="go"><span class="line"><span class="cl"><span class="c1">// 定义变量s[T],不去限定运行时具体使用哪个变量
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="kd">type</span> <span class="nx">s</span><span class="p">[</span><span class="nx">T</span> <span class="kt">int</span><span class="p">|</span><span class="kt">float64</span><span class="p">]</span> <span class="p">[]</span><span class="nx">T</span> <span class="c1">// s[T] T可以是int或float64
+</span></span></span></code></pre></div><p>那么如何使用这个变量呢，上面提到了，泛型核心思想是<strong>定义的时候不限定他的类型，让调用者自己去定义类型</strong></p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-go" data-lang="go"><span class="line"><span class="cl"><span class="c1">// 调用者自己去定义类型
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="kd">var</span> <span class="nx">a</span> <span class="nx">s</span><span class="p">[</span><span class="kt">int</span><span class="p">]</span> <span class="p">=</span> <span class="p">[]</span><span class="kt">int</span><span class="p">{</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">}</span> <span class="c1">// 调用时设定s[T]中T选取int类型去使用
+</span></span></span></code></pre></div><p>除了slice，其他类型也可以使用泛型来定义：</p>
 <ol>
-<li>实例化一个<code>channel</code></li>
-<li>执行写操作或者将<code>物主身份</code>传递给另一个<code>goroutine</code></li>
-<li>负责关闭该<code>channel</code></li>
-<li>将上面3条打包并通过一个只读<code>channel</code>暴露给外界</li>
-</ol>
-<p>通过上面的对<code>channel</code>进行责任划分，将会达到下面的效果：</p>
-<ol>
-<li>正因为是我们初始化的<code>channel</code>, 所以我们避免了往<code>nil channel</code>写入数据导致<code>dead lock</code>的风险</li>
-<li>正因为是我们初始化的<code>channel</code>, 所以我们避免了由于关闭<code>nil channel</code>产生的<code>panic</code>的风险</li>
-<li>正因为是我们来决定<code>channel</code>何时关闭， 所以我们避免了由于往<code>closed channel</code>继续写入数据产生的<code>panic</code>的风险</li>
-<li>正因为是我们来决定<code>channel</code>何时关闭， 所以我们避免了由于重复关闭<code>channel</code>而产生的<code>panic</code>的风险</li>
-<li>在编译时使用了类型检查器，以防止对<code>channel</code>不正确的写入</li>
-</ol>
-<p>其次我们来看看那些在从<code>channel</code>读取数据时可能发生的阻塞操作，作为<code>channel</code>的消费者，只需要关注两件事：</p>
-<ul>
-<li>要知道一个<code>channel</code>什么时候被关闭</li>
-<li>负责处理任何原因产生的<code>block</code></li>
-</ul>
-<p>处理第一点，我们可以像这样用第二个返回值<code>v,ok := &lt;-channel</code>，来校验<br>
-第二点就比较麻烦了，他取决于我们的算法逻辑，处理方法可能是作超时处理，也有可能别的程序告知要停止读取，或者也有可能就是像在程序生命周期内进行阻塞。不管是那种，作为一个消费端你应该处理读取过程中可能或将会阻塞的情况。</p>
-<p>现在呢，我们来通过一个例子来验证上面的观点，我们来创建一个<code>goroutine</code>,并且拥有一个<code>channel</code>，而且有一个消费端负责处理<code>channel</code>的阻塞<code>channel</code>关闭的情况：</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-go" data-lang="go"><span class="line"><span class="cl"><span class="nx">chanOwner</span> <span class="o">:=</span> <span class="kd">func</span><span class="p">()</span> <span class="o">&lt;-</span><span class="kd">chan</span> <span class="kt">int</span> <span class="p">{</span>
-</span></span><span class="line"><span class="cl">  <span class="c1">// 创建了一个5个buffer的channel,因为我们知道有6个数据将要写入，为了goroutine能尽快处理完
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span>  <span class="nx">resultStream</span> <span class="o">:=</span> <span class="nb">make</span><span class="p">(</span><span class="kd">chan</span> <span class="kt">int</span><span class="p">,</span> <span class="mi">5</span><span class="p">)</span> 
-</span></span><span class="line"><span class="cl">  <span class="c1">// 创建一个匿名函数来执行对resultStream的写操作
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span>  <span class="k">go</span> <span class="kd">func</span><span class="p">()</span> <span class="p">{</span>
-</span></span><span class="line"><span class="cl">    <span class="c1">// 我们确保写入数据完毕后关闭resultStream channel, 因为作为channel的owner这是我们应有的责任
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span>    <span class="k">defer</span> <span class="nb">close</span><span class="p">(</span><span class="nx">resultStream</span><span class="p">)</span>
-</span></span><span class="line"><span class="cl">    <span class="k">for</span> <span class="nx">i</span><span class="o">:=</span><span class="mi">0</span><span class="p">;</span><span class="nx">i</span><span class="o">&lt;=</span><span class="mi">5</span><span class="p">;</span><span class="nx">i</span><span class="o">++</span> <span class="p">{</span>
-</span></span><span class="line"><span class="cl">      <span class="c1">// 返回channel,暴露给外界，resultStream会隐式转换成单向channel
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span>      <span class="nx">resultStream</span> <span class="o">&lt;-</span><span class="nx">i</span>
-</span></span><span class="line"><span class="cl">    <span class="p">}</span>
-</span></span><span class="line"><span class="cl">  <span class="p">}()</span>
-</span></span><span class="line"><span class="cl">  <span class="k">return</span> <span class="nx">resultStream</span>
+<li>
+<p>map</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-go" data-lang="go"><span class="line"><span class="cl"><span class="kd">type</span> <span class="nx">MyMap</span><span class="p">[</span><span class="nx">Key</span> <span class="kt">int</span><span class="p">|</span><span class="kt">string</span><span class="p">,</span> <span class="nx">VALUE</span> <span class="nx">any</span><span class="p">]</span> <span class="kd">map</span><span class="p">[</span><span class="nx">KEY</span><span class="p">]</span><span class="nx">VALUE</span> <span class="c1">// any代表任何类型
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>
+</span></span><span class="line"><span class="cl"><span class="c1">// 调用
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="kd">var</span> <span class="nx">m1</span> <span class="nx">MyMap</span><span class="p">[</span><span class="kt">string</span><span class="p">,</span><span class="kt">float64</span><span class="p">]</span> <span class="p">=</span> <span class="kd">map</span><span class="p">[</span><span class="kt">string</span><span class="p">]</span><span class="kt">float64</span><span class="p">{</span>
+</span></span><span class="line"><span class="cl">	<span class="s">&#34;go&#34;</span><span class="p">:</span><span class="mf">9.8</span>
+</span></span><span class="line"><span class="cl">	<span class="s">&#34;php&#34;</span><span class="p">:</span><span class="mf">9.0</span>
 </span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span><span class="line"><span class="cl"><span class="c1">// 或者这样调用
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="nx">m1</span> <span class="o">:=</span> <span class="nb">make</span><span class="p">(</span><span class="nx">MyMap</span><span class="p">[</span><span class="kt">string</span><span class="p">]</span><span class="kt">float64</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="nx">m1</span><span class="p">[</span><span class="s">&#34;go&#34;</span><span class="p">]</span> <span class="p">=</span> <span class="mf">9.8</span>
+</span></span><span class="line"><span class="cl"><span class="nx">m1</span><span class="p">[</span><span class="s">&#34;php&#34;</span><span class="p">]</span> <span class="p">=</span> <span class="mf">9.0</span>
+</span></span></code></pre></div></li>
+<li>
+<p>struct</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-go" data-lang="go"><span class="line"><span class="cl"><span class="kd">type</span> <span class="nx">MyStruct</span><span class="p">[</span><span class="nx">T</span> <span class="kt">int</span><span class="p">|</span><span class="kt">float32</span><span class="p">|</span><span class="kt">float64</span><span class="p">]</span> <span class="kd">struct</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">	<span class="nx">element</span> <span class="p">[]</span><span class="nx">T</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span></code></pre></div></li>
+<li>
+<p>接口</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-go" data-lang="go"><span class="line"><span class="cl"><span class="kd">type</span> <span class="nx">IPrintData</span><span class="p">[</span><span class="nx">T</span> <span class="kt">int</span><span class="p">|</span><span class="kt">float32</span><span class="p">|</span><span class="kt">string</span><span class="p">]</span> <span class="kd">interface</span><span class="p">{</span>
+</span></span><span class="line"><span class="cl">	<span class="nf">Print</span><span class="p">(</span><span class="nx">data</span> <span class="nx">T</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span></code></pre></div></li>
+<li>
+<p>泛型通道</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-go" data-lang="go"><span class="line"><span class="cl"><span class="kd">type</span> <span class="nx">MyChan</span><span class="p">[</span><span class="nx">T</span> <span class="kt">int</span><span class="p">|</span><span class="kt">string</span><span class="p">]</span> <span class="kd">chan</span> <span class="nx">T</span>
 </span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl"><span class="nx">resultStream</span> <span class="o">:=</span> <span class="nf">chanOwner</span><span class="p">()</span>
-</span></span><span class="line"><span class="cl"><span class="c1">// range over resultStream, 作为消费端，我们只关心阻塞和关闭的channel
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="k">for</span> <span class="nx">result</span> <span class="o">:=</span> <span class="k">range</span> <span class="nx">resultStream</span> <span class="p">{</span>
-</span></span><span class="line"><span class="cl">  <span class="nx">fmt</span><span class="p">.</span><span class="nf">Printf</span><span class="p">(</span><span class="s">&#34;Received: %d\n&#34;</span><span class="p">,</span> <span class="nx">result</span><span class="p">)</span>
-</span></span><span class="line"><span class="cl"><span class="p">}</span>
-</span></span><span class="line"><span class="cl"><span class="nx">fmt</span><span class="p">.</span><span class="nf">Println</span><span class="p">(</span><span class="s">&#34;Done receiving!&#34;</span><span class="p">)</span>
-</span></span></code></pre></div><p>结果是：</p>
-<pre tabindex="0"><code>Received: 0
-Received: 1
-Received: 2
-Received: 3
-Received: 4
-Received: 5
-Done receiving!
-</code></pre><p>注意看下上面的<code>resultStream</code>这个<code>channel</code>是如何封装在<code>channel owner</code>函数里的。很明显，这种写法规避了往<code>nil channel</code>和<code>closed channel</code>里写入数据的风险，并且关闭<code>channel</code>只触发一次。为我们的程序规避了一大片的风险。</p>
-<p>而且这里建议你在程序里尽可能的保证<code>channel</code>的<code>物主身份</code>，也就是上面例子的<code>goroutine</code>的作用域范围小一点，这样好处是上面的一些问题会显而易见，如果你的<code>channel</code>是<code>struct</code>一个成员属性，并且有很多成员方法，那么随着代码的迭代很快就会不清楚<code>channel</code>的是来干什么的了</p>
-<p>作为<code>channel</code>的消费端，消费函数只有对<code>channel</code>的读取权限，因此也只需如何处理读取阻塞和<code>channel</code>的关闭。<br>
-上面的小例子我们完美的阻塞的程序，直到<code>channel</code>被关闭</p>
-<p>如果你按照这个模式来coding, 会很容易像你期望的那样运行，而不会出现一些奇奇怪怪的情况。虽然不会100%保证不会出现问题，但是如果真的出现了问题，那么可能是你的<code>channel 物主身份</code>的作用域过大导致<code>channel</code>的职责混乱了。</p>
+</span></span><span class="line"><span class="cl"><span class="c1">// 调用
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="kd">var</span> <span class="nx">c</span>  <span class="p">=</span> <span class="nb">make</span><span class="p">(</span><span class="nx">MyChan</span><span class="p">[</span><span class="kt">int</span><span class="p">])</span>
+</span></span><span class="line"><span class="cl"><span class="nx">c</span><span class="o">&lt;-</span><span class="mi">1</span>
+</span></span></code></pre></div></li>
+</ol>
 
 
-<h2 class="relative group">Select 
-    <div id="select" class="anchor"></div>
+<h3 class="relative group">泛型函数 
+    <div id="%E6%B3%9B%E5%9E%8B%E5%87%BD%E6%95%B0" class="anchor"></div>
     
     <span
         class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
         <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700"
-            style="text-decoration-line: none !important;" href="#select" aria-label="Anchor">#</a>
+            style="text-decoration-line: none !important;" href="#%E6%B3%9B%E5%9E%8B%E5%87%BD%E6%95%B0" aria-label="Anchor">#</a>
     </span>        
     
-</h2>
-<p>在各种并发模式里，<code>select</code>可以说随处可见，如果说<code>channel</code>是把一个个<code>goroutine</code>连接起来的桥梁，那么<code>select</code>是Go语言并发里最重要的语法之一。通过它把<code>channel</code>粘结在一起。<br>
-<code>select</code>也可以安全的将<code>channel</code>的一些概念比如取消，超时，等待，默认值等组合在一起。</p>
-<p>我们来简单的过一边<code>select</code>用法:</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-go" data-lang="go"><span class="line"><span class="cl"><span class="kd">var</span> <span class="nx">c1</span><span class="p">,</span> <span class="nx">c2</span> <span class="o">&lt;-</span><span class="kd">chan</span> <span class="nx">insterface</span><span class="p">{}</span>
-</span></span><span class="line"><span class="cl"><span class="kd">var</span> <span class="nx">c3</span> <span class="kd">chan</span><span class="o">&lt;-</span> <span class="kd">interface</span> 
-</span></span><span class="line"><span class="cl"><span class="k">select</span> <span class="p">{</span>
-</span></span><span class="line"><span class="cl">  <span class="k">case</span> <span class="o">&lt;-</span> <span class="nx">c1</span><span class="p">:</span>
-</span></span><span class="line"><span class="cl">    <span class="c1">// Do something
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span>  <span class="k">case</span> <span class="o">&lt;-</span> <span class="nx">c2</span><span class="p">:</span>
-</span></span><span class="line"><span class="cl">    <span class="c1">// Do something
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span>  <span class="k">case</span> <span class="nx">c3</span><span class="o">&lt;-</span> <span class="kd">struct</span><span class="p">{}{}:</span>
-</span></span><span class="line"><span class="cl">    <span class="c1">// Do something
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="p">}</span>
-</span></span></code></pre></div><p>和<code>switch-case</code>语法很像，但是<code>select</code>并不是<code>case</code>从上到下顺序执行的，并且就算一条都没有满足条件，程序也不会继续往下执行后面的逻辑。</p>
-<p>我们知道在有数据或者已经关闭的<code>channel</code>情况下读取并且在还没达到<code>channel</code>容量上限的情况下写入，所有的<code>channel</code>的写入和读取我们认为是同时进行的，如果读取和写入都没有准备好，那么整个<code>select</code>就会阻塞，然后当其中一个<code>channel</code>准备好了，那么对应的<code>case</code>会被执行：</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-go" data-lang="go"><span class="line"><span class="cl"><span class="nx">start</span> <span class="o">:=</span> <span class="nx">time</span><span class="p">.</span><span class="nf">Now</span><span class="p">()</span>
-</span></span><span class="line"><span class="cl"><span class="nx">c</span> <span class="o">:=</span> <span class="nb">make</span><span class="p">(</span><span class="kd">chan</span> <span class="kd">interface</span><span class="p">{})</span>
-</span></span><span class="line"><span class="cl"><span class="k">go</span> <span class="kd">func</span><span class="p">()</span> <span class="p">{</span>
-</span></span><span class="line"><span class="cl">  <span class="nx">time</span><span class="p">.</span><span class="nf">Sleep</span><span class="p">(</span><span class="mi">5</span><span class="o">*</span><span class="nx">time</span><span class="p">.</span><span class="nx">Second</span><span class="p">)</span>
-</span></span><span class="line"><span class="cl">  <span class="nb">close</span><span class="p">(</span><span class="nx">c</span><span class="p">)</span> <span class="c1">// 等待5秒后关闭channel
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="p">}()</span>
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl"><span class="nx">fmt</span><span class="p">.</span><span class="nf">Println</span><span class="p">(</span><span class="s">&#34;Blocking on read...&#34;</span><span class="p">)</span>
-</span></span><span class="line"><span class="cl"><span class="k">select</span> <span class="p">{</span>
-</span></span><span class="line"><span class="cl">  <span class="k">case</span> <span class="o">&lt;-</span><span class="nx">c</span><span class="p">:</span> <span class="c1">// 这里我们试图从channel里读取数据
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span>  <span class="nx">fmt</span><span class="p">.</span><span class="nf">Printf</span><span class="p">(</span><span class="s">&#34;Unblocked %v later .\n&#34;</span><span class="p">,</span> <span class="nx">time</span><span class="p">.</span><span class="nf">Since</span><span class="p">(</span><span class="nx">start</span><span class="p">))</span>
-</span></span><span class="line"><span class="cl"><span class="p">}</span>
-</span></span></code></pre></div><p>结果输出：</p>
-<pre tabindex="0"><code>Blocking on read...
-Unblocked 5.000170042s later
-</code></pre><p>从上面结果看我们在进入<code>select</code>代码块过了5秒后才结束。可以用这个方法简单而有效的等待一些工作处理好之前阻塞住。但是我们思考一下下面的情况会发生什么：</p>
-<ul>
-<li>如果有多个<code>channel</code>要读取会怎样？</li>
-<li>如果永远不会有任何<code>channel</code>满足条件会怎样？</li>
-<li>如果我想要执行一些操作，但是当时并没有<code>channel</code>满足条件该怎么办？</li>
-</ul>
-<p>第一个问题很有趣，多个<code>channel</code>会怎么分配呢？</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-go" data-lang="go"><span class="line"><span class="cl"><span class="nx">c1</span> <span class="o">:=</span> <span class="nb">make</span><span class="p">(</span><span class="kd">chan</span> <span class="kd">interface</span><span class="p">{});</span><span class="nb">close</span><span class="p">(</span><span class="nx">c1</span><span class="p">)</span>
-</span></span><span class="line"><span class="cl"><span class="nx">c2</span> <span class="o">:=</span> <span class="nb">make</span><span class="p">(</span><span class="kd">chan</span> <span class="kd">interface</span><span class="p">{});</span><span class="nb">close</span><span class="p">(</span><span class="nx">c2</span><span class="p">)</span>
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl"><span class="kd">var</span> <span class="nx">c1Count</span><span class="p">,</span> <span class="nx">c2Count</span> <span class="kt">int</span>
-</span></span><span class="line"><span class="cl"><span class="k">for</span> <span class="nx">i</span><span class="o">:=</span><span class="mi">1000</span><span class="p">;</span><span class="nx">i</span><span class="o">&gt;=</span><span class="mi">0</span><span class="p">;</span><span class="nx">i</span><span class="o">--</span> <span class="p">{</span>
-</span></span><span class="line"><span class="cl">  <span class="k">select</span> <span class="p">{</span>
-</span></span><span class="line"><span class="cl">    <span class="k">case</span> <span class="o">&lt;-</span><span class="nx">c1</span><span class="p">:</span>
-</span></span><span class="line"><span class="cl">      <span class="nx">c1Count</span><span class="o">++</span>
-</span></span><span class="line"><span class="cl">    <span class="k">case</span> <span class="o">&lt;-</span><span class="nx">c2</span><span class="p">:</span>
-</span></span><span class="line"><span class="cl">      <span class="nx">c2Count</span><span class="o">++</span>
-</span></span><span class="line"><span class="cl">  <span class="p">}</span>
-</span></span><span class="line"><span class="cl"><span class="p">}</span>
-</span></span><span class="line"><span class="cl"><span class="nx">fmt</span><span class="p">.</span><span class="nf">Printf</span><span class="p">(</span><span class="s">&#34;c1Count: %d\nc2Count: %d\n&#34;</span><span class="p">,</span> <span class="nx">c1Count</span><span class="p">,</span> <span class="nx">c2Count</span><span class="p">)</span>
-</span></span></code></pre></div><p>结果：</p>
-<pre tabindex="0"><code>c1Count: 505
-c2Count: 496
-</code></pre><p>我们可以看到，1000次循环，基本每个<code>channel</code>触发次数各占一半。Go的<code>runtime</code>会运行一个伪随机，在<code>select</code>里均匀地选择<code>case</code>来触发，每个<code>case</code>都有同等的机会被选择。</p>
-<p>那么第二个问题呢：如果永远不会有任何<code>channel</code>满足条件会怎样？<br>
-如果在阻塞期间你没有什么可做的，但是你又不想一直阻塞下去，那么你可以设置超时时间。Go里的<code>time</code>包提供了一个优雅的通过<code>channel</code>的方式来做这件事：</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-go" data-lang="go"><span class="line"><span class="cl"><span class="kd">var</span> <span class="nx">c</span> <span class="o">&lt;-</span><span class="kd">chan</span> <span class="kt">int</span>
-</span></span><span class="line"><span class="cl"><span class="k">select</span> <span class="p">{</span>
-</span></span><span class="line"><span class="cl">  <span class="k">case</span> <span class="o">&lt;-</span><span class="nx">c</span><span class="p">:</span> <span class="c1">// 这里永远不会被执行到，因为我们是从一个nil channel 里读数据，会一直阻塞
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span>  <span class="k">case</span> <span class="o">&lt;-</span><span class="nx">time</span><span class="p">.</span><span class="nf">After</span><span class="p">(</span><span class="mi">1</span> <span class="o">*</span> <span class="nx">time</span><span class="p">.</span><span class="nx">Second</span><span class="p">):</span>
-</span></span><span class="line"><span class="cl">    <span class="nx">fmt</span><span class="p">.</span><span class="nf">Println</span><span class="p">(</span><span class="s">&#34;Timed out.&#34;</span><span class="p">)</span>
-</span></span><span class="line"><span class="cl"><span class="p">}</span>
-</span></span></code></pre></div><p><code>time.After</code> 这个方法会在参数给定的时间区间之后，会把当前时间发送到<code>channel</code>里，正好被<code>select</code>消费掉，达到了超时的作用。以后我们会基于这个理念来做一个更强壮的超时退出模式。</p>
-<p>最后一个问题：如果我想要执行一些操作，但是当时并没有<code>channel</code>满足条件该怎么办？
-这个就和<code>switch-case</code>差不多了，<code>select-case</code>也有个<code>default</code>默认执行条件：</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-go" data-lang="go"><span class="line"><span class="cl"><span class="nx">start</span> <span class="o">:=</span> <span class="nx">time</span><span class="p">.</span><span class="nf">Now</span><span class="p">()</span>
-</span></span><span class="line"><span class="cl"><span class="kd">var</span> <span class="nx">c1</span><span class="p">,</span> <span class="nx">c2</span> <span class="o">&lt;-</span><span class="kd">chan</span> <span class="kt">int</span>
-</span></span><span class="line"><span class="cl"><span class="k">select</span><span class="p">{</span>
-</span></span><span class="line"><span class="cl">  <span class="k">case</span> <span class="o">&lt;-</span><span class="nx">c1</span><span class="p">:</span>
-</span></span><span class="line"><span class="cl">  <span class="k">case</span> <span class="o">&lt;-</span><span class="nx">c2</span><span class="p">:</span>
-</span></span><span class="line"><span class="cl">  <span class="k">default</span><span class="p">:</span>
-</span></span><span class="line"><span class="cl">    <span class="nx">fmt</span><span class="p">.</span><span class="nf">Printf</span><span class="p">(</span><span class="s">&#34;In default after %v\n&#34;</span><span class="p">,</span> <span class="nx">time</span><span class="p">.</span><span class="nf">Since</span><span class="p">(</span><span class="nx">start</span><span class="p">))</span>
-</span></span><span class="line"><span class="cl"><span class="p">}</span>
-</span></span></code></pre></div><p>结果：</p>
-<pre tabindex="0"><code>In default after 1.421μs
-</code></pre><p>可见几乎是瞬间就走到了<code>default</code>语句。这样我们就和<code>for-select</code>相互组合，来实现一个<code>goroutine</code>等待另一个<code>goroutine</code>的结果的同时继续处理其他事情：</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-go" data-lang="go"><span class="line"><span class="cl"><span class="nx">done</span> <span class="o">:=</span> <span class="nb">make</span><span class="p">(</span><span class="kd">chan</span> <span class="kd">interface</span><span class="p">{})</span>
-</span></span><span class="line"><span class="cl"><span class="k">go</span> <span class="kd">func</span><span class="p">()</span> <span class="p">{</span>
-</span></span><span class="line"><span class="cl">  <span class="nx">time</span><span class="p">.</span><span class="nf">Sleep</span><span class="p">(</span><span class="mi">5</span><span class="o">*</span><span class="nx">time</span><span class="p">.</span><span class="nx">Second</span><span class="p">)</span>
-</span></span><span class="line"><span class="cl">  <span class="nb">close</span><span class="p">(</span><span class="nx">done</span><span class="p">)</span>
-</span></span><span class="line"><span class="cl"><span class="p">}()</span>
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl"><span class="nx">workCounter</span> <span class="o">:=</span> <span class="mi">0</span>
-</span></span><span class="line"><span class="cl"><span class="nx">loop</span><span class="p">:</span>
-</span></span><span class="line"><span class="cl"><span class="k">for</span> <span class="p">{</span>
-</span></span><span class="line"><span class="cl">  <span class="k">select</span> <span class="p">{</span>
-</span></span><span class="line"><span class="cl">    <span class="k">case</span> <span class="o">&lt;-</span><span class="nx">done</span><span class="p">:</span>
-</span></span><span class="line"><span class="cl">      <span class="k">break</span> <span class="nx">loop</span>
-</span></span><span class="line"><span class="cl">    <span class="k">default</span><span class="p">:</span>
-</span></span><span class="line"><span class="cl">  <span class="p">}</span>
-</span></span><span class="line"><span class="cl">  <span class="c1">// 模拟处理一些其他事情
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span>  <span class="nx">workCounter</span><span class="o">++</span>
-</span></span><span class="line"><span class="cl">  <span class="nx">time</span><span class="p">.</span><span class="nf">Sleep</span><span class="p">(</span><span class="mi">1</span><span class="o">*</span><span class="nx">time</span><span class="p">.</span><span class="nx">Second</span><span class="p">)</span> 
-</span></span><span class="line"><span class="cl"><span class="p">}</span>
-</span></span><span class="line"><span class="cl"><span class="nx">fmt</span><span class="p">.</span><span class="nf">Printf</span><span class="p">(</span><span class="s">&#34;Achieved %v cycles of work before signalled to stop.\n&#34;</span><span class="p">,</span> <span class="nx">workCounter</span><span class="p">)</span>
-</span></span></code></pre></div><p>结果：</p>
-<pre tabindex="0"><code>Achieved 5 cycles of work before signalled to stop.
-</code></pre><p>最后, <code>select{}</code> 这个没有任何条件的语句会永远进行阻塞。</p>
-
-  
-  
-  
-  
+</h3>
 
 
-
-<div
-  
-    class="flex px-4 py-3 rounded-md bg-primary-100 dark:bg-primary-900"
-  >
-
-  <span
-    
-      class="text-primary-400 ltr:pr-3 rtl:pl-3 flex items-center"
-    >
-
-    
-
-  <span class="relative block icon">
-    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 512"><path fill="currentColor" d="M112.1 454.3c0 6.297 1.816 12.44 5.284 17.69l17.14 25.69c5.25 7.875 17.17 14.28 26.64 14.28h61.67c9.438 0 21.36-6.401 26.61-14.28l17.08-25.68c2.938-4.438 5.348-12.37 5.348-17.7L272 415.1h-160L112.1 454.3zM191.4 .0132C89.44 .3257 16 82.97 16 175.1c0 44.38 16.44 84.84 43.56 115.8c16.53 18.84 42.34 58.23 52.22 91.45c.0313 .25 .0938 .5166 .125 .7823h160.2c.0313-.2656 .0938-.5166 .125-.7823c9.875-33.22 35.69-72.61 52.22-91.45C351.6 260.8 368 220.4 368 175.1C368 78.61 288.9-.2837 191.4 .0132zM192 96.01c-44.13 0-80 35.89-80 79.1C112 184.8 104.8 192 96 192S80 184.8 80 176c0-61.76 50.25-111.1 112-111.1c8.844 0 16 7.159 16 16S200.8 96.01 192 96.01z"/></svg>
-
-  </span>
-
-
-  </span>
-
-  <span
-    
-      class="dark:text-neutral-300"
-    >To Be Continued&hellip;</span>
-</div>
-
-
-
-<h2 class="relative group">本文参考 
-    <div id="%E6%9C%AC%E6%96%87%E5%8F%82%E8%80%83" class="anchor"></div>
+<h4 class="relative group">成员函数 
+    <div id="%E6%88%90%E5%91%98%E5%87%BD%E6%95%B0" class="anchor"></div>
     
     <span
         class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
         <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700"
-            style="text-decoration-line: none !important;" href="#%E6%9C%AC%E6%96%87%E5%8F%82%E8%80%83" aria-label="Anchor">#</a>
+            style="text-decoration-line: none !important;" href="#%E6%88%90%E5%91%98%E5%87%BD%E6%95%B0" aria-label="Anchor">#</a>
     </span>        
     
-</h2>
-<ul>
-<li>[《Concurrency in GO》](<a href="https://raw.githubusercontent.com/KeKe-Li/book/master/Go/Concurrency" target="_blank">https://raw.githubusercontent.com/KeKe-Li/book/master/Go/Concurrency</a> in Go.pdf)</li>
-</ul>
+</h4>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-go" data-lang="go"><span class="line"><span class="cl"><span class="c1">// 声明自定义类型MySlice, 底层类型是[]T 同时T被约束 int或string
+</span></span></span><span class="line"><span class="cl"><span class="c1">// 注意这不是类型别名，go 1.9开始 类型别名是这样写的 type myint = int
+</span></span></span><span class="line"><span class="cl"><span class="c1">// 泛型不可以起别名
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="kd">type</span> <span class="nx">MySlice</span><span class="p">[</span><span class="nx">T</span> <span class="kt">int</span><span class="p">|</span><span class="kt">string</span><span class="p">]</span> <span class="p">[]</span><span class="nx">T</span> 
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1">// 定义变量MySlice的成员方法Add
+</span></span></span><span class="line"><span class="cl"><span class="c1">// 这里算是调用了泛型，在使用时需要实例化，所以要用MySlice[T]
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="kd">func</span> <span class="p">(</span><span class="nx">s</span> <span class="nx">MySlice</span><span class="p">[</span><span class="nx">T</span><span class="p">])</span> <span class="nf">Add</span><span class="p">()</span> <span class="nx">T</span><span class="p">{</span>
+</span></span><span class="line"><span class="cl">	<span class="kd">var</span> <span class="nx">sum</span> <span class="nx">T</span>
+</span></span><span class="line"><span class="cl">	<span class="k">for</span> <span class="nx">_</span><span class="p">,</span> <span class="nx">v</span> <span class="o">:=</span> <span class="k">range</span> <span class="nx">s</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">		<span class="nx">sum</span> <span class="o">+=</span> <span class="nx">v</span>
+</span></span><span class="line"><span class="cl">	<span class="p">}</span>
+</span></span><span class="line"><span class="cl">	<span class="k">return</span> <span class="nx">sum</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="kd">func</span> <span class="nf">main</span><span class="p">()</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">	<span class="c1">// 泛型调用时需要实例化，指定类型
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>	<span class="kd">var</span> <span class="nx">s</span> <span class="nx">MySlice</span><span class="p">[</span><span class="kt">int</span><span class="p">]</span> <span class="p">=</span> <span class="p">[]</span><span class="kt">int</span><span class="p">{</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">4</span><span class="p">,</span><span class="mi">5</span><span class="p">}</span>
+</span></span><span class="line"><span class="cl">	<span class="nx">fmt</span><span class="p">.</span><span class="nf">Println</span><span class="p">(</span><span class="nx">s</span><span class="p">.</span><span class="nf">Add</span><span class="p">())</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span></code></pre></div>
 
+<h4 class="relative group">普通函数 
+    <div id="%E6%99%AE%E9%80%9A%E5%87%BD%E6%95%B0" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
+        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700"
+            style="text-decoration-line: none !important;" href="#%E6%99%AE%E9%80%9A%E5%87%BD%E6%95%B0" aria-label="Anchor">#</a>
+    </span>        
+    
+</h4>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-go" data-lang="go"><span class="line"><span class="cl"><span class="kd">func</span> <span class="nx">Add</span><span class="p">[</span><span class="nx">T</span> <span class="kt">int</span><span class="p">|</span><span class="kt">string</span><span class="p">](</span><span class="nx">a</span><span class="p">,</span> <span class="nx">b</span> <span class="nx">T</span><span class="p">)</span> <span class="nx">T</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">	<span class="k">return</span> <span class="nx">a</span> <span class="o">+</span> <span class="nx">b</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="kd">func</span> <span class="nf">main</span><span class="p">()</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">	<span class="nx">Add</span><span class="p">[</span><span class="kt">int</span><span class="p">](</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">	<span class="nx">Add</span><span class="p">[</span><span class="kt">string</span><span class="p">](</span><span class="s">&#34;a&#34;</span><span class="p">,</span> <span class="s">&#34;b&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">	<span class="c1">// 如果参数是能被推断出类型的基本类型，则可以省略泛型的显示定义类型
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>	<span class="nf">Add</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">	<span class="nf">Add</span><span class="p">(</span><span class="s">&#34;a&#34;</span><span class="p">,</span> <span class="s">&#34;b&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span></code></pre></div><p>所以在泛型普通函数，可以自动推倒出泛型类型</p>
+
+
+<h3 class="relative group">自定义泛型类型 
+    <div id="%E8%87%AA%E5%AE%9A%E4%B9%89%E6%B3%9B%E5%9E%8B%E7%B1%BB%E5%9E%8B" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
+        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700"
+            style="text-decoration-line: none !important;" href="#%E8%87%AA%E5%AE%9A%E4%B9%89%E6%B3%9B%E5%9E%8B%E7%B1%BB%E5%9E%8B" aria-label="Anchor">#</a>
+    </span>        
+    
+</h3>
+<p>如果变量要泛型的类型太多怎么办，总不能满屏都写成这样：</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-go" data-lang="go"><span class="line"><span class="cl"><span class="kd">func</span> <span class="nx">Add</span><span class="p">[</span><span class="nx">T</span> <span class="kt">int</span><span class="p">|</span><span class="kt">int8</span><span class="p">|</span><span class="kt">int16</span><span class="p">|</span><span class="kt">int32</span><span class="p">|</span><span class="kt">int64</span><span class="p">](</span><span class="nx">a</span><span class="p">,</span> <span class="nx">b</span> <span class="nx">T</span><span class="p">)</span> <span class="nx">T</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">	<span class="k">return</span> <span class="nx">a</span> <span class="o">+</span> <span class="nx">b</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span></code></pre></div><p>这个时候我们可以自定义泛型类型，把要约束的类型集合归类到一起, 像声明接口一样声明：</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-go" data-lang="go"><span class="line"><span class="cl"><span class="kd">type</span> <span class="nx">MyInt</span> <span class="kd">interface</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">	<span class="kt">int</span><span class="p">|</span><span class="kt">int8</span><span class="p">|</span><span class="kt">int16</span><span class="p">|</span><span class="kt">int32</span><span class="p">|</span><span class="kt">int64</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="kd">func</span> <span class="nx">Add</span><span class="p">[</span><span class="nx">T</span> <span class="nx">MyInt</span><span class="p">](</span><span class="nx">a</span><span class="p">,</span> <span class="nx">b</span> <span class="nx">T</span><span class="p">)</span> <span class="nx">T</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">	<span class="k">return</span> <span class="nx">a</span> <span class="o">+</span> <span class="nx">b</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span></code></pre></div>
+
+<h4 class="relative group">衍生类型 
+    <div id="%E8%A1%8D%E7%94%9F%E7%B1%BB%E5%9E%8B" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
+        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700"
+            style="text-decoration-line: none !important;" href="#%E8%A1%8D%E7%94%9F%E7%B1%BB%E5%9E%8B" aria-label="Anchor">#</a>
+    </span>        
+    
+</h4>
+<p>那如果后续我有一个新的约束类型，并且这个新类型是某个类型的别名，比如：</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-go" data-lang="go"><span class="line"><span class="cl"><span class="kd">type</span> <span class="nx">newint</span> <span class="kt">int8</span>
+</span></span></code></pre></div><p>有两种方法新增，一个是直接约束后面追加：</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-go" data-lang="go"><span class="line"><span class="cl"><span class="kd">type</span> <span class="nx">MyInt</span> <span class="kd">interface</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">	<span class="kt">int</span><span class="p">|</span><span class="kt">int8</span><span class="p">|</span><span class="kt">int16</span><span class="p">|</span><span class="kt">int32</span><span class="p">|</span><span class="kt">int64</span><span class="p">|</span><span class="nx">newint</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span></code></pre></div><p>另一个方法是在类型前加符号<code>~</code>，代表这个类型以及其衍生类型，包括我们在这类型上定义的别名</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-go" data-lang="go"><span class="line"><span class="cl"><span class="kd">type</span> <span class="nx">MyInt</span> <span class="kd">interface</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">	<span class="kt">int</span><span class="p">|~</span><span class="kt">int8</span><span class="p">|</span><span class="kt">int16</span><span class="p">|</span><span class="kt">int32</span><span class="p">|</span><span class="kt">int64</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span> 
+</span></span></code></pre></div>
         </div>
         
         
@@ -1414,8 +1325,8 @@ c2Count: 496
           
         
       <script>
-        var oid = "views_posts\/1723169687333-concurrency-patterns-in-go-1\/index.md"
-        var oid_likes = "likes_posts\/1723169687333-concurrency-patterns-in-go-1\/index.md"
+        var oid = "views_posts\/1728107140733-go-generic\/index.md"
+        var oid_likes = "likes_posts\/1728107140733-go-generic\/index.md"
       </script>
       
       
@@ -1435,30 +1346,30 @@ c2Count: 496
       <div class="flex justify-between pt-3">
         <span>
           
-        </span>
-        <span>
-          
-            <a class="flex text-right group ml-3" href="/posts/1728107140733-go-generic/">
+            <a class="flex group mr-3" href="/posts/1723169687333-concurrency-patterns-in-go-1/">
+              <span
+                class="mr-3 text-neutral-700 group-hover:text-primary-600 ltr:inline rtl:hidden dark:text-neutral dark:group-hover:text-primary-400"
+                >&larr;</span
+              >
+              <span
+                class="ml-3 text-neutral-700 group-hover:text-primary-600 ltr:hidden rtl:inline dark:text-neutral dark:group-hover:text-primary-400"
+                >&rarr;</span
+              >
               <span class="flex flex-col">
                 <span
                   class="mt-[0.1rem] leading-6 group-hover:underline group-hover:decoration-primary-500"
-                  >Golang 泛型</span
+                  >Go并发模式（一）</span
                 >
                 <span class="mt-[0.1rem] text-xs text-neutral-500 dark:text-neutral-400">
                   
-                    <time datetime="2024-10-05 00:00:00 &#43;0000 UTC">5 October 2024</time>
+                    <time datetime="2019-11-18 00:00:00 &#43;0000 UTC">18 November 2019</time>
                   
                 </span>
               </span>
-              <span
-                class="ml-3 text-neutral-700 group-hover:text-primary-600 ltr:inline rtl:hidden dark:text-neutral dark:group-hover:text-primary-400"
-                >&rarr;</span
-              >
-              <span
-                class="mr-3 text-neutral-700 group-hover:text-primary-600 ltr:hidden rtl:inline dark:text-neutral dark:group-hover:text-primary-400"
-                >&larr;</span
-              >
             </a>
+          
+        </span>
+        <span>
           
         </span>
       </div>
