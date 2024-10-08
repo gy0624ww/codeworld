@@ -18,7 +18,7 @@ layout = "fixed-fill-blur"
 
 [footer]
 showMenu = true
-showCopyright = true
+showCopyright = "yes"
 showThemeAttribution = false
 showAppearanceSwitcher = true
 showScrollToTop = true

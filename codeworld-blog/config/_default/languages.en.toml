@@ -11,6 +11,7 @@ dateFormat = "2 January 2006"
 description = "记录知识,分享知识"
 logo = "avatar.jpg"
 secondaryLogo = "avatar.jpg"
+copyright = "©{ year }  备案号：<a href='http://beian.miit.gov.cn'>辽ICP备15011453号-2</a>"
 
 [author]
 name = "渺小de尘埃"
